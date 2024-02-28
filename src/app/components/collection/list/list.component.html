@@ -1,0 +1,9 @@
+<ul class="models-list">
+  <li *ngFor="let model of list" (click)="onModelClick(model)" class="model-item">
+    <div class="model-date">Date : {{ model.date | frenchDate }}</div>
+    <div class="model-content">
+      <img [src]="getImagePath(model.modelName)" alt="Image de {{model.name}}" class="model-image">
+      <div class="model-name">{{ model.name }}</div>
+    </div>
+  </li>
+</ul>

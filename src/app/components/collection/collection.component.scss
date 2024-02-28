@@ -1,0 +1,71 @@
+mat-toolbar {
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #191D20;
+
+  .search-container {
+    margin-top: 20px;
+  }
+
+  button.add-model-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #2986FD;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 10px;
+    border: transparent;
+    margin-right: 20px;
+    &:hover {
+      background-color: #1E5FED;
+      cursor: pointer;
+    }
+  }
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  overflow: hidden;
+  height: calc(100vh - 80px);
+  .main-list-container {
+    flex: 30%;
+    margin: 10px 0px;
+    height: 100%;
+    max-width: 360px;
+    padding-right: 20px;
+    overflow-y: scroll;
+  }
+  .model-container {
+    flex: 65%;
+    margin: 10px 0px;
+    height: auto;
+    border-radius: 10px;
+    overflow-y: scroll;
+  }
+}
+
+.cdk-overlay-dark-backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.mat-dialog-container {
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 20px;
+}
+
+.mat-dialog-content {
+  padding: 0;
+}
+
+.mat-dialog-actions {
+  padding: 0;
+  margin: 0;
+}

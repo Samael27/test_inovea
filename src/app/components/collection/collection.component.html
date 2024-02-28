@@ -1,0 +1,41 @@
+<mat-toolbar>
+
+  <!--Search a model by his name -->
+  <div class="search-container">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Chercher un modèle 3D</mat-label>
+        <mat-icon matPrefix>search</mat-icon>
+        <input type="text"
+               placeholder="Chercher par nom"
+               aria-label="Nom"
+               matInput
+               [formControl]="modelName"
+               [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let model of filteredModels" [value]="model.name">
+            {{ model.name }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  </div>
+
+  <!--Add a new model -->
+  <button mat-button (click)="openModelDialog()" class="add-model-btn">
+    <mat-icon>
+      add
+    </mat-icon>
+    <span>Ajouter un modèle 3D</span>
+  </button>
+
+</mat-toolbar>
+
+<div class="content-container">
+  <div class="main-list-container">
+      <app-list [list]="filteredModels"></app-list>
+  </div>
+  <div class="model-container">
+    <app-model-details></app-model-details>
+  </div>
+</div>

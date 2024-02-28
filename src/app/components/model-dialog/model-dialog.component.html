@@ -1,0 +1,46 @@
+<h2>Ajouter un modèle 3D</h2>
+<button class="close-dialog" mat-icon-button (click)="closeDialog()"><mat-icon>close</mat-icon></button>
+
+<form [formGroup]="modelForm" (ngSubmit)="onSubmit()">
+  <label for="name">Nom du modèle*</label>
+  <mat-form-field appearance="fill">
+    <input matInput formControlName="name" id="name" type="text">
+    @if (modelForm.get('name')?.hasError('required')) {
+      <mat-error>Le nom est <strong>obligatoire</strong></mat-error>
+    }
+  </mat-form-field>
+
+  <label for="author">Auteur*</label>
+  <mat-form-field appearance="fill">
+    <input matInput formControlName="author" id="author" type="text">
+    @if (modelForm.get('author')?.hasError('required')) {
+      <mat-error>L'auteur est <strong>obligatoire</strong></mat-error>
+    }
+  </mat-form-field>
+
+  <label for="polygons">Nombre de polygones*</label>
+  <mat-form-field appearance="fill">
+    <input matInput formControlName="polygons" id="polygons" type="number">
+    @if (modelForm.get('polygons')?.hasError('required')) {
+      <mat-error>Le nombre de polygones est <strong>obligatoire</strong></mat-error>
+    }
+  </mat-form-field>
+
+  <label for="modelName">Nom du fichier*</label>
+  <mat-form-field appearance="fill">
+    <input matInput formControlName="modelName" for="modelName" type="text">
+    @if (modelForm.get('modelName')?.hasError('required')) {
+      <mat-error>Le modèle est <strong>obligatoire</strong></mat-error>
+    }
+  </mat-form-field>
+
+  <label for="description">Description</label>
+  <mat-form-field appearance="fill">
+    <textarea matInput formControlName="description" id="description"></textarea>
+  </mat-form-field>
+
+  <div class="actions">
+    <button mat-button (click)="closeDialog()">Annuler</button>
+    <button mat-button type="submit">Enregistrer</button>
+  </div>
+</form>

@@ -1,0 +1,30 @@
+.app-container {
+  display: flex;
+  flex-direction: row;
+  aside {
+    width: 150px;
+    height: 100vh;
+    background-color: black;
+    h1.title {
+      color: white;
+      text-align: center;
+      font-size: 20px;
+      padding: 25px;
+    }
+  }
+  main {
+    width: calc(100% - 150px);
+    height: 100%;
+    h1 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  }
+}

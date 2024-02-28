@@ -1,0 +1,17 @@
+<div *ngIf="selectedModel; else emptyState" class="model-detail-container">
+    <div class="model-header">
+      <p class="model-title">{{ selectedModel.name }}</p>
+      <p class="model-author">{{ selectedModel.author }}</p>
+    </div>
+    <img class="model-image" [src]="getImagePath(selectedModel.modelName)" alt="Image de {{ selectedModel.name }}">
+    <p class="model-date"><b>Publié le</b> : {{ selectedModel.date | frenchDate }}</p>
+    <p class="model-polygons"><b>Polygones</b> : {{ selectedModel.polygons }}</p>
+    <p class="model-description"><b>Description</b> : {{ selectedModel.description }}</p>
+    <div class="model-actions">
+      <button mat-button class="warn" (click)="deleteModel()">Supprimer le modèle</button>
+      <button mat-button class="primary" (click)="openEditDialog()">Modifier le modèle</button>
+    </div>
+</div>
+<ng-template #emptyState>
+    <p>Sélectionnez un modèle pour voir les détails.</p>
+</ng-template>
